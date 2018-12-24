@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import psycopg2
 from _views import view_dictionary
 from _queries import query_dictionary

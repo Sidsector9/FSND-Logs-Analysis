@@ -8,11 +8,11 @@ view_dictionary = {
 
     'viewsPerAuthor': """
         CREATE OR REPLACE VIEW viewsPerAuthor AS
-        SELECT articles.author, sum(views) AS totalViewsForAuthor
+        SELECT author, SUM(views) AS totalViewsForAuthor
         FROM articles
         JOIN logsCount
-        ON logsCount.path
-        LIKE CONCAT('%', articles.slug) GROUP BY articles.author;
+        ON path
+        LIKE CONCAT('%', slug) GROUP BY author;
     """,
 
     'visitsPerDay': """
